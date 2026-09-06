@@ -10,7 +10,7 @@ INT450 course project.
 
     .evtx binaries → parse → render → index (FAISS + BM25) → retrieve → LLM
 
-37,364 raw events are curated to 1,771 indexed documents (95% reduction)
+37,364 raw events are curated to 1,771 indexed documents 
 by filtering noisy event types and capping repeated event shapes.
 
 ## Setup
@@ -52,5 +52,8 @@ by filtering noisy event types and capping repeated event shapes.
 
 ## Notes
 
-Data is not committed — clone the corpus and rebuild. Full technical
-reference in `docs/`.
+Data is not committed — clone the corpus and rebuild from : 
+
+(https://github.com/sbousseaden/EVTX-ATTACK-SAMPLES) (evtx)
+
+(https://github.com/OTRF/Security-Datasets) (pcap)
