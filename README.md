@@ -135,9 +135,6 @@ python src/verify.py "<chunk_id from the evidence list>"
 # compare retrievers on one query
 python src/compare.py "192.168.0.4"
 
-# measure
-python eval/run_eval.py
-python eval/run_eval.py --ablation
 ```
 
 ## Files
@@ -156,15 +153,6 @@ python eval/run_eval.py --ablation
 | `src/llm.py` | Local LLM backend, same interface |
 | `eval/run_eval.py` | Recall@8, MRR, Precision@8 against gold labels |
 
-## Evaluation
-
-Gold labels come free: the corpus is foldered by MITRE ATT&CK tactic, so the
-source file for a given question is known. 26 questions across four kinds --
-semantic, lexical, network, and matched pairs that ask the same thing in
-analyst vocabulary versus log vocabulary.
-
-Retrieval is measured separately from generation, because the two fail
-independently and only one is fixable by changing the model.
 
 ## Known limitations
 
