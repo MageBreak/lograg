@@ -28,25 +28,24 @@ class Retriever:
         self.docs, self.bm25 = store["docs"], store["bm25"]
         self.model = SentenceTransformer(MODEL, device="cuda")
 
-    def search(self, query, k=8, pool=60):
-        """Hybrid retrieval fused with Reciprocal Rank Fusion."""
-        # dense: semantic neighbours
-        qv = self.model.encode([query], normalize_embeddings=True)
-        _, dense_ids = self.index.search(np.asarray(qv, "float32"), pool)
-        dense_ids = dense_ids[0]
+    def search(self, query, k=8, pool=60, mode="hybrid"):
+        """Hybrid retrieval fused with Reciprocal Rank Fusion.
 
-        # sparse: exact token overlap
-        scores = self.bm25.get_scores(tokenize(query))
-        sparse_ids = np.argsort(scores)[::-1][:pool]
-
-        # RRF: score by RANK not by raw score. Cosine similarity and BM25
-        # scores live on incomparable scales, so you cannot add them. Rank
-        # is comparable. k=60 is the standard damping constant.
+        mode lets the eval harness disable one retriever at a time, so the
+        contribution of each can be measured rather than assumed.
+        """
         fused = {}
-        for rank, i in enumerate(dense_ids):
-            fused[i] = fused.get(i, 0) + 1 / (60 + rank)
-        for rank, i in enumerate(sparse_ids):
-            fused[i] = fused.get(i, 0) + 1 / (60 + rank)
+
+        if mode in ("dense", "hybrid"):
+            qv = self.model.encode([query], normalize_embeddings=True)
+            _, dense_ids = self.index.search(np.asarray(qv, "float32"), pool)
+            for rank, i in enumerate(dense_ids[0]):
+                fused[i] = fused.get(i, 0) + 1 / (60 + rank)
+
+        if mode in ("sparse", "hybrid"):
+            scores = self.bm25.get_scores(tokenize(query))
+            for rank, i in enumerate(np.argsort(scores)[::-1][:pool]):
+                fused[i] = fused.get(i, 0) + 1 / (60 + rank)
 
         best = sorted(fused, key=fused.get, reverse=True)[:k]
         return [self.docs[i] for i in best]
