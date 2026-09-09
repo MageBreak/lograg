@@ -1,0 +1,4 @@
+nohup: ignoring input
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 15 files:   7%|▋         | 1/15 [00:00<00:05,  2.53it/s]Fetching 15 files:  40%|████      | 6/15 [00:00<00:00, 14.99it/s]Fetching 15 files:  60%|██████    | 9/15 [00:01<00:00,  7.18it/s]Fetching 15 files:  67%|██████▋   | 10/15 [00:20<00:00,  7.18it/s]Fetching 15 files:  73%|███████▎  | 11/15 [01:22<00:47, 11.90s/it]Fetching 15 files:  80%|████████  | 12/15 [05:04<02:23, 47.96s/it]Fetching 15 files: 100%|██████████| 15/15 [05:04<00:00, 27.66s/it]Fetching 15 files: 100%|██████████| 15/15 [05:04<00:00, 20.31s/it]
+done

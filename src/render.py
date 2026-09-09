@@ -27,7 +27,7 @@ KEEP_SYSMON = {1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
                17, 18, 19, 20, 21, 22, 23, 25}
 KEEP_SECURITY = {4624, 4625, 4634, 4648, 4657, 4663, 4672, 4688, 4697,
                  4698, 4720, 4728, 4732, 4738, 4768, 4769, 4776,
-                 5140, 5145, 7045}
+                 5140, 5145, 7045, 1102, 4719, 4739}
 
 MAX_PER_SHAPE = 5     # keep the first N of any repeated event shape
 
@@ -217,8 +217,13 @@ def render(rec):
     near-identical vectors. Putting host and timestamp in the text lets BM25
     match them exactly. This is why hybrid retrieval works.
     """
+    # The source filename is often the most semantically loaded string
+    # available - it names the technique, the tool, the CVE. Excluding it
+    # made CVE-2020-1472 unretrievable despite the file being indexed.
+    scenario = rec["file"].rsplit("/", 1)[-1].replace(".evtx", "").replace("_", " ")
     head = (f"[{rec['ts']}] host={rec['host']} "
-            f"{rec['source']} EventID {rec['event_id']} ({rec['event_name']})")
+            f"{rec['source']} EventID {rec['event_id']} ({rec['event_name']}) "
+            f"[scenario: {rec['tactic']} / {scenario}]")
     return f"{head} - {render_body(rec)}"
 
 
