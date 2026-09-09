@@ -1,0 +1,61 @@
+nohup: ignoring input
+######## EMBEDDING MODEL ABLATION ########
+
+======== EMBED_MODEL=BAAI/bge-small-en-v1.5 ========
+2101 documents
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10893.87it/s]
+Batches:   0%|          | 0/33 [00:00<?, ?it/s]Batches:   3%|▎         | 1/33 [00:01<00:41,  1.30s/it]Batches:   6%|▌         | 2/33 [00:01<00:19,  1.59it/s]Batches:   9%|▉         | 3/33 [00:01<00:12,  2.40it/s]Batches:  12%|█▏        | 4/33 [00:01<00:08,  3.26it/s]Batches:  15%|█▌        | 5/33 [00:01<00:06,  4.04it/s]Batches:  18%|█▊        | 6/33 [00:02<00:05,  4.91it/s]Batches:  24%|██▍       | 8/33 [00:02<00:03,  6.54it/s]Batches:  27%|██▋       | 9/33 [00:02<00:03,  7.05it/s]Batches:  33%|███▎      | 11/33 [00:02<00:02,  8.95it/s]Batches:  39%|███▉      | 13/33 [00:02<00:02,  9.24it/s]Batches:  45%|████▌     | 15/33 [00:02<00:01, 10.69it/s]Batches:  52%|█████▏    | 17/33 [00:02<00:01, 11.95it/s]Batches:  58%|█████▊    | 19/33 [00:03<00:01, 11.89it/s]Batches:  64%|██████▎   | 21/33 [00:03<00:00, 12.86it/s]Batches:  70%|██████▉   | 23/33 [00:03<00:00, 13.61it/s]Batches:  76%|███████▌  | 25/33 [00:03<00:00, 12.91it/s]Batches:  82%|████████▏ | 27/33 [00:03<00:00, 11.07it/s]Batches:  88%|████████▊ | 29/33 [00:03<00:00, 12.61it/s]Batches:  94%|█████████▍| 31/33 [00:03<00:00, 14.01it/s]Batches: 100%|██████████| 33/33 [00:04<00:00, 15.32it/s]Batches: 100%|██████████| 33/33 [00:04<00:00,  8.05it/s]
+dense index: 2101 vectors, dim 384
+sparse index + metadata -> data/index/store.pkl
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 34774.87it/s]
+config      recall@8     MRR     P@8
+------------------------------------
+sparse         0.654   0.595   0.438
+dense          0.846   0.814   0.548
+hybrid         0.846   0.815   0.591
+
+wrote eval/results.json
+
+======== EMBED_MODEL=BAAI/bge-large-en-v1.5 ========
+2101 documents
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights:  27%|██▋       | 106/391 [00:00<00:00, 572.58it/s]Loading weights:  42%|████▏     | 166/391 [00:00<00:00, 556.08it/s]Loading weights:  57%|█████▋    | 222/391 [00:00<00:00, 334.52it/s]Loading weights:  71%|███████   | 277/391 [00:00<00:00, 365.47it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 497.62it/s]
+Batches:   0%|          | 0/33 [00:00<?, ?it/s]Batches:   3%|▎         | 1/33 [00:01<00:43,  1.35s/it]Batches:   6%|▌         | 2/33 [00:01<00:24,  1.27it/s]Batches:   9%|▉         | 3/33 [00:02<00:18,  1.65it/s]Batches:  12%|█▏        | 4/33 [00:02<00:14,  2.03it/s]Batches:  15%|█▌        | 5/33 [00:02<00:11,  2.35it/s]Batches:  18%|█▊        | 6/33 [00:03<00:10,  2.60it/s]Batches:  21%|██        | 7/33 [00:03<00:08,  2.93it/s]Batches:  24%|██▍       | 8/33 [00:03<00:07,  3.29it/s]Batches:  27%|██▋       | 9/33 [00:03<00:06,  3.63it/s]Batches:  30%|███       | 10/33 [00:03<00:06,  3.80it/s]Batches:  33%|███▎      | 11/33 [00:04<00:05,  3.92it/s]Batches:  36%|███▋      | 12/33 [00:04<00:05,  4.13it/s]Batches:  39%|███▉      | 13/33 [00:04<00:04,  4.32it/s]Batches:  42%|████▏     | 14/33 [00:04<00:04,  4.20it/s]Batches:  45%|████▌     | 15/33 [00:05<00:04,  4.42it/s]Batches:  48%|████▊     | 16/33 [00:05<00:03,  4.40it/s]Batches:  52%|█████▏    | 17/33 [00:05<00:03,  4.28it/s]Batches:  55%|█████▍    | 18/33 [00:05<00:03,  4.40it/s]Batches:  58%|█████▊    | 19/33 [00:06<00:03,  4.37it/s]Batches:  61%|██████    | 20/33 [00:06<00:02,  4.48it/s]Batches:  64%|██████▎   | 21/33 [00:06<00:02,  4.60it/s]Batches:  67%|██████▋   | 22/33 [00:06<00:02,  4.68it/s]Batches:  70%|██████▉   | 23/33 [00:06<00:02,  4.84it/s]Batches:  73%|███████▎  | 24/33 [00:07<00:01,  4.91it/s]Batches:  76%|███████▌  | 25/33 [00:07<00:01,  4.76it/s]Batches:  79%|███████▉  | 26/33 [00:07<00:01,  4.83it/s]Batches:  82%|████████▏ | 27/33 [00:07<00:01,  5.11it/s]Batches:  85%|████████▍ | 28/33 [00:07<00:00,  5.26it/s]Batches:  88%|████████▊ | 29/33 [00:07<00:00,  5.60it/s]Batches:  91%|█████████ | 30/33 [00:08<00:00,  5.89it/s]Batches:  94%|█████████▍| 31/33 [00:08<00:00,  6.09it/s]Batches:  97%|█████████▋| 32/33 [00:08<00:00,  6.33it/s]Batches: 100%|██████████| 33/33 [00:08<00:00,  6.55it/s]Batches: 100%|██████████| 33/33 [00:08<00:00,  3.87it/s]
+dense index: 2101 vectors, dim 1024
+sparse index + metadata -> data/index/store.pkl
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 15690.37it/s]
+config      recall@8     MRR     P@8
+------------------------------------
+sparse         0.654   0.595   0.438
+dense          0.808   0.731   0.534
+hybrid         0.846   0.795   0.577
+
+wrote eval/results.json
+
+======== EMBED_MODEL=Qwen/Qwen3-Embedding-4B ========
+2101 documents
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:  28%|██▊       | 112/398 [00:00<00:00, 889.95it/s]Loading weights:  51%|█████     | 201/398 [00:00<00:00, 319.28it/s]Loading weights:  63%|██████▎   | 250/398 [00:00<00:00, 352.81it/s]Loading weights:  75%|███████▍  | 298/398 [00:00<00:00, 333.98it/s]Loading weights:  85%|████████▌ | 339/398 [00:01<00:00, 248.42it/s]Loading weights: 100%|██████████| 398/398 [00:01<00:00, 356.07it/s]
+Batches:   0%|          | 0/33 [00:00<?, ?it/s]Batches:   3%|▎         | 1/33 [00:04<02:38,  4.94s/it]Batches:   6%|▌         | 2/33 [00:05<01:16,  2.46s/it]Batches:   9%|▉         | 3/33 [00:06<00:48,  1.61s/it]Batches:  12%|█▏        | 4/33 [00:06<00:34,  1.18s/it]Batches:  15%|█▌        | 5/33 [00:07<00:25,  1.10it/s]Batches:  18%|█▊        | 6/33 [00:07<00:19,  1.37it/s]Batches:  21%|██        | 7/33 [00:07<00:16,  1.61it/s]Batches:  24%|██▍       | 8/33 [00:08<00:13,  1.84it/s]Batches:  27%|██▋       | 9/33 [00:08<00:11,  2.03it/s]Batches:  30%|███       | 10/33 [00:09<00:10,  2.12it/s]Batches:  33%|███▎      | 11/33 [00:09<00:09,  2.21it/s]Batches:  36%|███▋      | 12/33 [00:09<00:09,  2.29it/s]Batches:  39%|███▉      | 13/33 [00:10<00:08,  2.45it/s]Batches:  42%|████▏     | 14/33 [00:10<00:07,  2.56it/s]Batches:  45%|████▌     | 15/33 [00:10<00:06,  2.70it/s]Batches:  48%|████▊     | 16/33 [00:11<00:05,  2.92it/s]Batches:  52%|█████▏    | 17/33 [00:11<00:05,  3.08it/s]Batches:  55%|█████▍    | 18/33 [00:11<00:04,  3.11it/s]Batches:  58%|█████▊    | 19/33 [00:12<00:04,  2.98it/s]Batches:  61%|██████    | 20/33 [00:12<00:04,  3.13it/s]Batches:  64%|██████▎   | 21/33 [00:12<00:03,  3.17it/s]Batches:  67%|██████▋   | 22/33 [00:13<00:03,  3.37it/s]Batches:  70%|██████▉   | 23/33 [00:13<00:02,  3.51it/s]Batches:  73%|███████▎  | 24/33 [00:13<00:02,  3.49it/s]Batches:  76%|███████▌  | 25/33 [00:13<00:02,  3.32it/s]Batches:  79%|███████▉  | 26/33 [00:14<00:02,  3.35it/s]Batches:  82%|████████▏ | 27/33 [00:14<00:01,  3.67it/s]Batches:  85%|████████▍ | 28/33 [00:14<00:01,  3.80it/s]Batches:  88%|████████▊ | 29/33 [00:14<00:01,  3.97it/s]Batches:  91%|█████████ | 30/33 [00:15<00:00,  4.12it/s]Batches:  94%|█████████▍| 31/33 [00:15<00:00,  4.26it/s]Batches:  97%|█████████▋| 32/33 [00:15<00:00,  4.26it/s]Batches: 100%|██████████| 33/33 [00:15<00:00,  4.65it/s]Batches: 100%|██████████| 33/33 [00:15<00:00,  2.09it/s]
+dense index: 2101 vectors, dim 2560
+sparse index + metadata -> data/index/store.pkl
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 15107.50it/s]
+config      recall@8     MRR     P@8
+------------------------------------
+sparse         0.654   0.595   0.438
+dense          0.808   0.677   0.519
+hybrid         0.846   0.739   0.562
+
+wrote eval/results.json
+
+######## RESTORE bge-small INDEX ########
+2101 documents
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 36348.32it/s]
+Batches:   0%|          | 0/33 [00:00<?, ?it/s]Batches:   3%|▎         | 1/33 [00:00<00:25,  1.25it/s]Batches:   6%|▌         | 2/33 [00:01<00:14,  2.09it/s]Batches:   9%|▉         | 3/33 [00:01<00:09,  3.00it/s]Batches:  12%|█▏        | 4/33 [00:01<00:07,  3.92it/s]Batches:  15%|█▌        | 5/33 [00:01<00:05,  4.90it/s]Batches:  18%|█▊        | 6/33 [00:01<00:04,  5.87it/s]Batches:  21%|██        | 7/33 [00:01<00:04,  6.28it/s]Batches:  27%|██▋       | 9/33 [00:01<00:02,  8.29it/s]Batches:  33%|███▎      | 11/33 [00:01<00:02, 10.26it/s]Batches:  39%|███▉      | 13/33 [00:02<00:01, 11.54it/s]Batches:  45%|████▌     | 15/33 [00:02<00:01, 12.67it/s]Batches:  52%|█████▏    | 17/33 [00:02<00:01, 13.88it/s]Batches:  58%|█████▊    | 19/33 [00:02<00:00, 15.29it/s]Batches:  64%|██████▎   | 21/33 [00:02<00:00, 15.64it/s]Batches:  70%|██████▉   | 23/33 [00:02<00:00, 16.21it/s]Batches:  76%|███████▌  | 25/33 [00:02<00:00, 16.61it/s]Batches:  82%|████████▏ | 27/33 [00:02<00:00, 15.90it/s]Batches:  88%|████████▊ | 29/33 [00:03<00:00, 16.85it/s]Batches:  94%|█████████▍| 31/33 [00:03<00:00, 17.17it/s]Batches: 100%|██████████| 33/33 [00:03<00:00, 17.16it/s]Batches: 100%|██████████| 33/33 [00:03<00:00, 10.03it/s]
+dense index: 2101 vectors, dim 384
+sparse index + metadata -> data/index/store.pkl
+
+######## LOCAL MODEL ANSWERS ########
+Traceback (most recent call last):
+  File "/nfsshare/users/P127003162/projects/lograg/batch_answers.py", line 4, in <module>
+    from ask import Retriever, ask, show_evidence
+ImportError: cannot import name 'show_evidence' from 'ask' (/nfsshare/users/P127003162/projects/lograg/src/ask.py)
+ALL DONE
