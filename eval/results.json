@@ -1,0 +1,813 @@
+{
+  "summaries": [
+    {
+      "config": "sparse",
+      "recall": 0.5769230769230769,
+      "mrr": 0.451007326007326,
+      "precision": 0.30288461538461536,
+      "n": 26
+    },
+    {
+      "config": "dense",
+      "recall": 0.7307692307692307,
+      "mrr": 0.6465201465201466,
+      "precision": 0.35096153846153844,
+      "n": 26
+    },
+    {
+      "config": "hybrid",
+      "recall": 0.7307692307692307,
+      "mrr": 0.6987179487179488,
+      "precision": 0.3798076923076923,
+      "n": 26
+    }
+  ],
+  "rows": {
+    "sparse": [
+      {
+        "id": "q01",
+        "question": "was there any evidence of UAC bypass?",
+        "kind": "semantic",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.625,
+        "rank": 1,
+        "top_file": "Privilege Escalation/sysmon_uacbypass_CDSSync_schtask_hijack_byeintegrity5.evtx"
+      },
+      {
+        "id": "q02",
+        "question": "did anything modify firewall or RDP settings to allow remote access?",
+        "kind": "semantic",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.25,
+        "rank": 1,
+        "top_file": "Defense Evasion/sysmon_13_rdp_settings_tampering.evtx"
+      },
+      {
+        "id": "q03",
+        "question": "was there evidence of credential dumping from lsass memory?",
+        "kind": "semantic",
+        "recall": 1.0,
+        "mrr": 0.16666666666666666,
+        "precision": 0.125,
+        "rank": 6,
+        "top_file": "Execution/Exec_sysmon_meterpreter_reversetcp_msipackage.evtx"
+      },
+      {
+        "id": "q04",
+        "question": "did anyone clear the security event log?",
+        "kind": "semantic",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Execution/Exec_sysmon_meterpreter_reversetcp_msipackage.evtx"
+      },
+      {
+        "id": "q05",
+        "question": "was a new local account created and added to the administrators group?",
+        "kind": "semantic",
+        "recall": 1.0,
+        "mrr": 0.25,
+        "precision": 0.25,
+        "rank": 4,
+        "top_file": "AutomatedTestingTools/PanacheSysmon_vs_AtomicRedTeam01.evtx"
+      },
+      {
+        "id": "q06",
+        "question": "was there a password spraying attack against kerberos?",
+        "kind": "semantic",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Credential Access/CA_keefarce_keepass_credump.evtx"
+      },
+      {
+        "id": "q07",
+        "question": "was Active Directory enumerated with a domain reconnaissance tool?",
+        "kind": "semantic",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Defense Evasion/DE_ProcessHerpaderping_Sysmon_11_10_1_7.evtx"
+      },
+      {
+        "id": "q08",
+        "question": "did an attacker execute commands remotely over WMI?",
+        "kind": "semantic",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Privilege Escalation/sysmon_11_1_15_WScriptBypassUAC.evtx"
+      },
+      {
+        "id": "q09",
+        "question": "was PowerShell remoting used to run code on another machine?",
+        "kind": "semantic",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Defense Evasion/de_powershell_execpolicy_changed_sysmon_13.evtx"
+      },
+      {
+        "id": "q10",
+        "question": "was a scheduled task created for persistence?",
+        "kind": "semantic",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "AutomatedTestingTools/Malware/DE_timestomp_and_dll_sideloading_and_RunPersist.evtx"
+      },
+      {
+        "id": "q11",
+        "question": "what did desktopimgdownldr.exe download?",
+        "kind": "lexical",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.125,
+        "rank": 1,
+        "top_file": "Execution/sysmon_11_1_lolbas_downldr_desktopimgdownldr.evtx"
+      },
+      {
+        "id": "q12",
+        "question": "show events involving EfsPotato.exe",
+        "kind": "lexical",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.5,
+        "rank": 1,
+        "top_file": "Privilege Escalation/EfsPotato_sysmon_17_18_privesc_seimpersonate_to_system.evtx"
+      },
+      {
+        "id": "q13",
+        "question": "which process wrote to the registry key HKU Environment systemroot?",
+        "kind": "lexical",
+        "recall": 1.0,
+        "mrr": 0.14285714285714285,
+        "precision": 0.25,
+        "rank": 7,
+        "top_file": "Privilege Escalation/Sysmon_UACME_34.evtx"
+      },
+      {
+        "id": "q14",
+        "question": "netsh advfirewall add rule localport 3389",
+        "kind": "lexical",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.375,
+        "rank": 1,
+        "top_file": "Defense Evasion/sysmon_13_rdp_settings_tampering.evtx"
+      },
+      {
+        "id": "q15",
+        "question": "CVE-2020-1472 zerologon netlogon",
+        "kind": "lexical",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "apt29/day1/SCRANTON_ssl.log"
+      },
+      {
+        "id": "q16",
+        "question": "which accounts requested Kerberos service tickets and for which services?",
+        "kind": "network",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 1.0,
+        "rank": 1,
+        "top_file": "apt29/day1/NASHUA_kerberos.log"
+      },
+      {
+        "id": "q17",
+        "question": "show DCE/RPC calls to the drsuapi endpoint",
+        "kind": "network",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 1.0,
+        "rank": 1,
+        "top_file": "apt29/day1/NASHUA_dce_rpc.log"
+      },
+      {
+        "id": "q18",
+        "question": "which connections sent more than one megabyte outbound?",
+        "kind": "network",
+        "recall": 1.0,
+        "mrr": 0.16666666666666666,
+        "precision": 0.125,
+        "rank": 6,
+        "top_file": "AutomatedTestingTools/Malware/rundll32_hollowing_wermgr_masquerading.evtx"
+      },
+      {
+        "id": "q19",
+        "question": "were there TLS certificate validation failures?",
+        "kind": "network",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.25,
+        "rank": 1,
+        "top_file": "apt29/day1/NASHUA_notice.log"
+      },
+      {
+        "id": "q20",
+        "question": "which SMB shares were mapped by remote hosts?",
+        "kind": "network",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 1.0,
+        "rank": 1,
+        "top_file": "apt29/day1/SCRANTON_smb_mapping.log"
+      },
+      {
+        "id": "p01a",
+        "question": "which user account was used for lateral movement between hosts?",
+        "kind": "pair-analyst",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Persistence/sysmon_local_account_creation_and_added_admingroup_12_13.evtx"
+      },
+      {
+        "id": "p01b",
+        "question": "which client principals requested Kerberos TGS tickets for cifs and ldap services?",
+        "kind": "pair-log",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 1.0,
+        "rank": 1,
+        "top_file": "apt29/day1/SCRANTON_kerberos.log"
+      },
+      {
+        "id": "p02a",
+        "question": "was any data exfiltrated from the network?",
+        "kind": "pair-analyst",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "apt29/day1/NASHUA_dns.log"
+      },
+      {
+        "id": "p02b",
+        "question": "which tcp connections had large orig_bytes values to port 80?",
+        "kind": "pair-log",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Privilege Escalation/sysmon_1_13_11_cmstp_ini_uacbypass.evtx"
+      },
+      {
+        "id": "p03a",
+        "question": "was there evidence of domain controller credential replication abuse?",
+        "kind": "pair-analyst",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "AutomatedTestingTools/PanacheSysmon_vs_AtomicRedTeam01.evtx"
+      },
+      {
+        "id": "p03b",
+        "question": "DRSBind DRSGetNCChanges drsuapi endpoint calls",
+        "kind": "pair-log",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 1.0,
+        "rank": 1,
+        "top_file": "apt29/day1/NASHUA_dce_rpc.log"
+      }
+    ],
+    "dense": [
+      {
+        "id": "q01",
+        "question": "was there any evidence of UAC bypass?",
+        "kind": "semantic",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.125,
+        "rank": 1,
+        "top_file": "Privilege Escalation/sysmon_uacbypass_CDSSync_schtask_hijack_byeintegrity5.evtx"
+      },
+      {
+        "id": "q02",
+        "question": "did anything modify firewall or RDP settings to allow remote access?",
+        "kind": "semantic",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.125,
+        "rank": 1,
+        "top_file": "Defense Evasion/sysmon_13_rdp_settings_tampering.evtx"
+      },
+      {
+        "id": "q03",
+        "question": "was there evidence of credential dumping from lsass memory?",
+        "kind": "semantic",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.25,
+        "rank": 1,
+        "top_file": "Credential Access/sysmon_rdrleakdiag_lsass_dump.evtx"
+      },
+      {
+        "id": "q04",
+        "question": "did anyone clear the security event log?",
+        "kind": "semantic",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Credential Access/Sysmon13_MachineAccount_Password_Hash_Changed_via_LsarSetSecret.evtx"
+      },
+      {
+        "id": "q05",
+        "question": "was a new local account created and added to the administrators group?",
+        "kind": "semantic",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Defense Evasion/DE_Fake_ComputerAccount_4720.evtx"
+      },
+      {
+        "id": "q06",
+        "question": "was there a password spraying attack against kerberos?",
+        "kind": "semantic",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "apt29/day1/SCRANTON_kerberos.log"
+      },
+      {
+        "id": "q07",
+        "question": "was Active Directory enumerated with a domain reconnaissance tool?",
+        "kind": "semantic",
+        "recall": 1.0,
+        "mrr": 0.14285714285714285,
+        "precision": 0.125,
+        "rank": 7,
+        "top_file": "apt29/day1/SCRANTON_dns.log"
+      },
+      {
+        "id": "q08",
+        "question": "did an attacker execute commands remotely over WMI?",
+        "kind": "semantic",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.125,
+        "rank": 1,
+        "top_file": "Lateral Movement/wmi_remote_registry_sysmon.evtx"
+      },
+      {
+        "id": "q09",
+        "question": "was PowerShell remoting used to run code on another machine?",
+        "kind": "semantic",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Lateral Movement/LM_sysmon_psexec_smb_meterpreter.evtx"
+      },
+      {
+        "id": "q10",
+        "question": "was a scheduled task created for persistence?",
+        "kind": "semantic",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.25,
+        "rank": 1,
+        "top_file": "Lateral Movement/LM_ScheduledTask_ATSVC_target_host.evtx"
+      },
+      {
+        "id": "q11",
+        "question": "what did desktopimgdownldr.exe download?",
+        "kind": "lexical",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.125,
+        "rank": 1,
+        "top_file": "Execution/sysmon_11_1_lolbas_downldr_desktopimgdownldr.evtx"
+      },
+      {
+        "id": "q12",
+        "question": "show events involving EfsPotato.exe",
+        "kind": "lexical",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.25,
+        "rank": 1,
+        "top_file": "Privilege Escalation/EfsPotato_sysmon_17_18_privesc_seimpersonate_to_system.evtx"
+      },
+      {
+        "id": "q13",
+        "question": "which process wrote to the registry key HKU Environment systemroot?",
+        "kind": "lexical",
+        "recall": 1.0,
+        "mrr": 0.3333333333333333,
+        "precision": 0.125,
+        "rank": 3,
+        "top_file": "Privilege Escalation/Sysmon_UACME_45.evtx"
+      },
+      {
+        "id": "q14",
+        "question": "netsh advfirewall add rule localport 3389",
+        "kind": "lexical",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.125,
+        "rank": 1,
+        "top_file": "Defense Evasion/sysmon_13_rdp_settings_tampering.evtx"
+      },
+      {
+        "id": "q15",
+        "question": "CVE-2020-1472 zerologon netlogon",
+        "kind": "lexical",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Credential Access/CA_chrome_firefox_opera_4663.evtx"
+      },
+      {
+        "id": "q16",
+        "question": "which accounts requested Kerberos service tickets and for which services?",
+        "kind": "network",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 1.0,
+        "rank": 1,
+        "top_file": "apt29/day1/SCRANTON_kerberos.log"
+      },
+      {
+        "id": "q17",
+        "question": "show DCE/RPC calls to the drsuapi endpoint",
+        "kind": "network",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 1.0,
+        "rank": 1,
+        "top_file": "apt29/day1/NASHUA_dce_rpc.log"
+      },
+      {
+        "id": "q18",
+        "question": "which connections sent more than one megabyte outbound?",
+        "kind": "network",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.875,
+        "rank": 1,
+        "top_file": "apt29/day1/SCRANTON_conn.log"
+      },
+      {
+        "id": "q19",
+        "question": "were there TLS certificate validation failures?",
+        "kind": "network",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.25,
+        "rank": 1,
+        "top_file": "apt29/day1/NASHUA_notice.log"
+      },
+      {
+        "id": "q20",
+        "question": "which SMB shares were mapped by remote hosts?",
+        "kind": "network",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 1.0,
+        "rank": 1,
+        "top_file": "apt29/day1/NASHUA_smb_mapping.log"
+      },
+      {
+        "id": "p01a",
+        "question": "which user account was used for lateral movement between hosts?",
+        "kind": "pair-analyst",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Privilege Escalation/privesc_registry_symlink_CVE-2020-1377.evtx"
+      },
+      {
+        "id": "p01b",
+        "question": "which client principals requested Kerberos TGS tickets for cifs and ldap services?",
+        "kind": "pair-log",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 1.0,
+        "rank": 1,
+        "top_file": "apt29/day1/SCRANTON_kerberos.log"
+      },
+      {
+        "id": "p02a",
+        "question": "was any data exfiltrated from the network?",
+        "kind": "pair-analyst",
+        "recall": 1.0,
+        "mrr": 0.3333333333333333,
+        "precision": 0.5,
+        "rank": 3,
+        "top_file": "Privilege Escalation/Sysmon_UACME_64.evtx"
+      },
+      {
+        "id": "p02b",
+        "question": "which tcp connections had large orig_bytes values to port 80?",
+        "kind": "pair-log",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 1.0,
+        "rank": 1,
+        "top_file": "apt29/day1/SCRANTON_conn.log"
+      },
+      {
+        "id": "p03a",
+        "question": "was there evidence of domain controller credential replication abuse?",
+        "kind": "pair-analyst",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "AutomatedTestingTools/PanacheSysmon_vs_AtomicRedTeam01.evtx"
+      },
+      {
+        "id": "p03b",
+        "question": "DRSBind DRSGetNCChanges drsuapi endpoint calls",
+        "kind": "pair-log",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.875,
+        "rank": 1,
+        "top_file": "apt29/day1/NASHUA_dce_rpc.log"
+      }
+    ],
+    "hybrid": [
+      {
+        "id": "q01",
+        "question": "was there any evidence of UAC bypass?",
+        "kind": "semantic",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.625,
+        "rank": 1,
+        "top_file": "Privilege Escalation/sysmon_uacbypass_CDSSync_schtask_hijack_byeintegrity5.evtx"
+      },
+      {
+        "id": "q02",
+        "question": "did anything modify firewall or RDP settings to allow remote access?",
+        "kind": "semantic",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.125,
+        "rank": 1,
+        "top_file": "Defense Evasion/sysmon_13_rdp_settings_tampering.evtx"
+      },
+      {
+        "id": "q03",
+        "question": "was there evidence of credential dumping from lsass memory?",
+        "kind": "semantic",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.125,
+        "rank": 1,
+        "top_file": "Credential Access/sysmon_rdrleakdiag_lsass_dump.evtx"
+      },
+      {
+        "id": "q04",
+        "question": "did anyone clear the security event log?",
+        "kind": "semantic",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Credential Access/Sysmon13_MachineAccount_Password_Hash_Changed_via_LsarSetSecret.evtx"
+      },
+      {
+        "id": "q05",
+        "question": "was a new local account created and added to the administrators group?",
+        "kind": "semantic",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.25,
+        "rank": 1,
+        "top_file": "Persistence/Network_Service_Guest_added_to_admins_4732.evtx"
+      },
+      {
+        "id": "q06",
+        "question": "was there a password spraying attack against kerberos?",
+        "kind": "semantic",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Credential Access/CA_keefarce_keepass_credump.evtx"
+      },
+      {
+        "id": "q07",
+        "question": "was Active Directory enumerated with a domain reconnaissance tool?",
+        "kind": "semantic",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "AutomatedTestingTools/PanacheSysmon_vs_AtomicRedTeam01.evtx"
+      },
+      {
+        "id": "q08",
+        "question": "did an attacker execute commands remotely over WMI?",
+        "kind": "semantic",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.125,
+        "rank": 1,
+        "top_file": "Lateral Movement/wmi_remote_registry_sysmon.evtx"
+      },
+      {
+        "id": "q09",
+        "question": "was PowerShell remoting used to run code on another machine?",
+        "kind": "semantic",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Lateral Movement/lm_sysmon_18_remshell_over_namedpipe.evtx"
+      },
+      {
+        "id": "q10",
+        "question": "was a scheduled task created for persistence?",
+        "kind": "semantic",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.25,
+        "rank": 1,
+        "top_file": "Lateral Movement/LM_ScheduledTask_ATSVC_target_host.evtx"
+      },
+      {
+        "id": "q11",
+        "question": "what did desktopimgdownldr.exe download?",
+        "kind": "lexical",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.125,
+        "rank": 1,
+        "top_file": "Execution/sysmon_11_1_lolbas_downldr_desktopimgdownldr.evtx"
+      },
+      {
+        "id": "q12",
+        "question": "show events involving EfsPotato.exe",
+        "kind": "lexical",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.5,
+        "rank": 1,
+        "top_file": "Privilege Escalation/EfsPotato_sysmon_17_18_privesc_seimpersonate_to_system.evtx"
+      },
+      {
+        "id": "q13",
+        "question": "which process wrote to the registry key HKU Environment systemroot?",
+        "kind": "lexical",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.125,
+        "rank": 1,
+        "top_file": "Privilege Escalation/sysmon_uacbypass_CDSSync_schtask_hijack_byeintegrity5.evtx"
+      },
+      {
+        "id": "q14",
+        "question": "netsh advfirewall add rule localport 3389",
+        "kind": "lexical",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.25,
+        "rank": 1,
+        "top_file": "Defense Evasion/sysmon_13_rdp_settings_tampering.evtx"
+      },
+      {
+        "id": "q15",
+        "question": "CVE-2020-1472 zerologon netlogon",
+        "kind": "lexical",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Credential Access/CA_chrome_firefox_opera_4663.evtx"
+      },
+      {
+        "id": "q16",
+        "question": "which accounts requested Kerberos service tickets and for which services?",
+        "kind": "network",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 1.0,
+        "rank": 1,
+        "top_file": "apt29/day1/NASHUA_kerberos.log"
+      },
+      {
+        "id": "q17",
+        "question": "show DCE/RPC calls to the drsuapi endpoint",
+        "kind": "network",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 1.0,
+        "rank": 1,
+        "top_file": "apt29/day1/NASHUA_dce_rpc.log"
+      },
+      {
+        "id": "q18",
+        "question": "which connections sent more than one megabyte outbound?",
+        "kind": "network",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.875,
+        "rank": 1,
+        "top_file": "apt29/day1/SCRANTON_conn.log"
+      },
+      {
+        "id": "q19",
+        "question": "were there TLS certificate validation failures?",
+        "kind": "network",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 0.25,
+        "rank": 1,
+        "top_file": "apt29/day1/NASHUA_notice.log"
+      },
+      {
+        "id": "q20",
+        "question": "which SMB shares were mapped by remote hosts?",
+        "kind": "network",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 1.0,
+        "rank": 1,
+        "top_file": "apt29/day1/SCRANTON_smb_mapping.log"
+      },
+      {
+        "id": "p01a",
+        "question": "which user account was used for lateral movement between hosts?",
+        "kind": "pair-analyst",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "Credential Access/CA_chrome_firefox_opera_4663.evtx"
+      },
+      {
+        "id": "p01b",
+        "question": "which client principals requested Kerberos TGS tickets for cifs and ldap services?",
+        "kind": "pair-log",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 1.0,
+        "rank": 1,
+        "top_file": "apt29/day1/SCRANTON_kerberos.log"
+      },
+      {
+        "id": "p02a",
+        "question": "was any data exfiltrated from the network?",
+        "kind": "pair-analyst",
+        "recall": 1.0,
+        "mrr": 0.16666666666666666,
+        "precision": 0.25,
+        "rank": 6,
+        "top_file": "Privilege Escalation/sysmon_11_1_15_WScriptBypassUAC.evtx"
+      },
+      {
+        "id": "p02b",
+        "question": "which tcp connections had large orig_bytes values to port 80?",
+        "kind": "pair-log",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 1.0,
+        "rank": 1,
+        "top_file": "apt29/day1/SCRANTON_conn.log"
+      },
+      {
+        "id": "p03a",
+        "question": "was there evidence of domain controller credential replication abuse?",
+        "kind": "pair-analyst",
+        "recall": 0.0,
+        "mrr": 0.0,
+        "precision": 0.0,
+        "rank": null,
+        "top_file": "AutomatedTestingTools/PanacheSysmon_vs_AtomicRedTeam01.evtx"
+      },
+      {
+        "id": "p03b",
+        "question": "DRSBind DRSGetNCChanges drsuapi endpoint calls",
+        "kind": "pair-log",
+        "recall": 1.0,
+        "mrr": 1.0,
+        "precision": 1.0,
+        "rank": 1,
+        "top_file": "apt29/day1/NASHUA_dce_rpc.log"
+      }
+    ]
+  }
+}
